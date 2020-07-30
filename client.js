@@ -15,6 +15,11 @@ const connect = function() {
     console.log("err:",err);
   });
 
+  conn.on("connect", connection=>{
+    console.log("Connected");
+    conn.write('Name: ZRX');
+  });
+
   conn.on("data", data=>{
     console.log("data:", data);
   });
