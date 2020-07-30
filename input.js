@@ -1,25 +1,35 @@
+const {
+  MOVE_UP_KEY,
+  MOVE_DOWN_KEY,
+  MOVE_LEFT_KEY,
+  MOVE_RIGHT_KEY,
+  EXIT_KEY} = require('./constants');
 let connection;
 
 const handleUserInput = function(key) {
   console.log("typing", key);
-  if (key === '\u0003') {
+  if (key === EXIT_KEY) {
     process.exit();
   }
-  if (key === "w") {
+  if (key === MOVE_UP_KEY) {
     console.log("uo");
     connection.write("Move: up");
   }
-  if (key === "s") {
+  if (key === MOVE_DOWN_KEY) {
     console.log("down");
     connection.write("Move: down");
   }
-  if (key === "a") {
+  if (key === MOVE_LEFT_KEY) {
     console.log("left");
     connection.write("Move: left");
   }
-  if (key === "d") {
+  if (key === MOVE_RIGHT_KEY) {
     console.log("d");
     connection.write("Move: right");
+  }
+  if (key === "1") {
+    console.log("message");
+    connection.write("Say: hi");
   }
 };
 
