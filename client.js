@@ -17,6 +17,7 @@ const connect = function() {
 
   conn.on("connect", connection=>{
     console.log("Connected");
+
     conn.write('Name: ZRX');
   });
 
